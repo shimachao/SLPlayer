@@ -3,6 +3,7 @@
 
 
 Window::Window(int width, int height)
+	:m_width(width), m_height(height)
 {
 }
 
@@ -15,78 +16,64 @@ Window::~Window()
 // 窗口过程函数
 LRESULT CALLBACK Window::WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-	static Window *pWindow = nullptr;
-	PAINTSTRUCT ps;
-	HDC dc;
-
 	switch (message)
 	{
-	case WM_CREATE:
-	{
-		LPCREATESTRUCT pcs = (LPCREATESTRUCT)lParam;
-		pWindow = (Window *)pcs->lpCreateParams;
-		break;
-	}
-
-	case WM_PAINT:
-		
-		break;
-
-	case WM_SIZE:
-		break;
-
-	case WM_MOUSEMOVE:
-		
-		break;
-
-		/*case WM_NCHITTEST:
-		if (pWindow != nullptr)
-		{
-		int xPos = GET_X_LPARAM(lParam);
-		int yPos = GET_Y_LPARAM(lParam);
-		POINT p;
-		p.x = xPos;
-		p.y = yPos;
-		::ScreenToClient(hWnd, &p);
-		if (pWindow->ifMouseOnControl(p.x, p.y))
-		{
-		return HTCLIENT;
-		}
-		else
-		{
-		return HTCAPTION;
-		}
-		}
-		return HTCAPTION;*/
-
-	case WM_LBUTTONDOWN:
-		break;
-
-	case WM_LBUTTONUP:
-		break;
-
-	case WM_NCLBUTTONDOWN:
-		break;
-
-	case WM_NCLBUTTONUP:
-		break;
-
-	case WM_CLOSE:
-		DestroyWindow(hWnd);
-		break;
-
-	case WM_DISPLAYCHANGE:
-		InvalidateRect(hWnd, NULL, FALSE);
-		break;
-
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		break;
 
-
+	default:
+		return DefWindowProc(hWnd, message, wParam, lParam);;
 	}
+}
 
-	return DefWindowProc(hWnd, message, wParam, lParam);;
+
+// 窗口初始化
+bool Window::Initialize()
+{
+	// 注册窗口类
+	WNDCLASSEX wcex = { sizeof(WNDCLASSEX) };
+	wcex.style = CS_HREDRAW | CS_VREDRAW;
+	wcex.lpfnWndProc = Window::WindowProc;
+	wcex.cbClsExtra = 0;
+	wcex.cbWndExtra = 0;
+	wcex.hInstance = HINST_THISCOMPONENT;
+	wcex.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
+	wcex.lpszMenuName = NULL;
+	wcex.hCursor = LoadCursor(NULL, IDI_APPLICATION);
+	wcex.lpszClassName = L"SLPlayerWnd";
+
+	RegisterClassEx(&wcex);
+
+
+	// 创建窗口
+	m_hWnd = CreateWindow(
+		L"SLPlayerWnd",
+		L"BIAOTI",
+		WS_POPUP,
+		CW_USEDEFAULT,
+		CW_USEDEFAULT,
+		m_width,
+		m_height,
+		NULL,
+		NULL,
+		HINST_THISCOMPONENT,
+		this
+		);
+
+	return m_hWnd != NULL;
+}
+
+
+// 显示窗口
+void Window::Show()
+{
+	// 显示窗口
+	if (m_hWnd != NULL)
+	{
+		ShowWindow(m_hWnd, SW_SHOWNORMAL);
+		UpdateWindow(m_hWnd);
+	}
 }
 
 
