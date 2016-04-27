@@ -13,6 +13,9 @@ public:
 	Window(int width = 600, int height = 400);
 	~Window();
 
+	// 将窗口移动到屏幕中间
+	void MoveToScreenCenter();
+
 
 private:
 	// 窗口过程函数
@@ -20,7 +23,7 @@ private:
 
 private:
 	int	m_width;
-	int height;
+	int m_height;
 	HWND m_hWnd; // 窗口句柄
 };
 

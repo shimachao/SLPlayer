@@ -88,3 +88,17 @@ LRESULT CALLBACK Window::WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPAR
 
 	return DefWindowProc(hWnd, message, wParam, lParam);;
 }
+
+
+// 将窗口移动到屏幕中间
+void Window::MoveToScreenCenter()
+{
+	int srcWidth = GetSystemMetrics(SM_CXSCREEN);
+	int srcHeight = GetSystemMetrics(SM_CYSCREEN);
+
+	int left = (srcWidth - m_width) / 2;
+	int top = (srcHeight - m_height) / 2;
+
+	MoveWindow(m_hWnd, left, top, m_width, m_height, false);
+}
+
