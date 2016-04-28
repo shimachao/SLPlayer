@@ -26,7 +26,7 @@ LRESULT CALLBACK Window::WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPAR
 		return HTCAPTION;
 
 	default:
-		return DefWindowProc(hWnd, message, wParam, lParam);;
+		return DefWindowProc(hWnd, message, wParam, lParam);
 	}
 }
 
