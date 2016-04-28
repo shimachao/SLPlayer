@@ -5,6 +5,9 @@
 Window::Window(int width, int height)
 	:m_width(width), m_height(height)
 {
+	m_r = 0;
+	m_g = 0;
+	m_b = 0;
 }
 
 
@@ -92,3 +95,12 @@ void Window::MoveToScreenCenter()
 	MoveWindow(m_hWnd, left, top, m_width, m_height, false);
 }
 
+
+// ÉèÖÃ´°¿Ú±³¾°ÑÕÉ«
+void Window::SetBackgroundColor(BYTE r, BYTE g, BYTE b)
+{
+	m_r = r;
+	m_g = g;
+	m_b = b;
+	//InvalidateRect(m_hWnd, NULL, true);
+}

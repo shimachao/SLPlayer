@@ -19,7 +19,8 @@ public:
 	void MoveToScreenCenter();
 	// 显示窗口
 	void Show();
-
+	// 设置窗口背景颜色
+	void SetBackgroundColor(BYTE r, BYTE g, BYTE b);
 
 private:
 	// 窗口过程函数
@@ -29,5 +30,8 @@ private:
 	int	m_width;
 	int m_height;
 	HWND m_hWnd; // 窗口句柄
+	BYTE m_r; // 背景颜色的r分量
+	BYTE m_g; // 背景颜色的g分量
+	BYTE m_b; // 背景颜色的b分量
 };
 
