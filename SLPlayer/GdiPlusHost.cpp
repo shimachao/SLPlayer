@@ -1,6 +1,6 @@
 #include "GdiPlusHost.h"
 #include <GdiPlus.h>
-#pragma comment(lib, "Gidplus.lib")
+#pragma comment(lib,"Gdiplus.lib")
 
 using Gdiplus::GdiplusStartupInput;
 using Gdiplus::GdiplusShutdown;
