@@ -46,3 +46,16 @@ void RoundButton::up()
 		(m_eventToAction[CLICK])();
 	}
 }
+
+
+// 连接事件和响应动作
+bool RoundButton::connect(Event event, std::function<void()> action)
+{
+	if (event >= PRESS_DOWN && event <= CLICK)
+	{
+		m_eventToAction[event] = action;
+		return true;
+	}
+
+	return false;
+}
