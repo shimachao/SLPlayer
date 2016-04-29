@@ -36,6 +36,6 @@ public:
 
 private:
 	State m_state = UP; // 按钮的状态
-	std::map<Event, std::function<void>> m_eventToAction; // 事件和响应动作之间的映射
+	std::map<Event, std::function<void()>> m_eventToAction; // 事件和响应动作之间的映射
 };
 
