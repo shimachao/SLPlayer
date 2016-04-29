@@ -6,7 +6,7 @@ RoundButton::RoundButton()
 {
 	m_eventToAction[PRESS_DOWN] = nullptr;
 	m_eventToAction[POP_UP] = nullptr;
-	m_eventToAction[DOWN] = nullptr;
+	m_eventToAction[CLICK] = nullptr;
 }
 
 
