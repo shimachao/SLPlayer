@@ -21,6 +21,8 @@ public:
 	void Show();
 	// 设置窗口背景颜色
 	void SetBackgroundColor(BYTE r, BYTE g, BYTE b);
+	// 响应WM_PAINT消息
+	void onPaint(HDC dc);
 
 private:
 	// 窗口过程函数

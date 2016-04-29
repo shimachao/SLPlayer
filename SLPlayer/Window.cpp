@@ -1,5 +1,5 @@
 #include "Window.h"
-
+#include <GdiPlus.h>
 
 
 Window::Window(int width, int height)
@@ -19,18 +19,39 @@ Window::~Window()
 // 窗口过程函数
 LRESULT CALLBACK Window::WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+	static Window *pWindow = nullptr;
+	PAINTSTRUCT ps;
+	HDC dc;
+
 	switch (message)
 	{
+	case WM_CREATE:
+	{
+		LPCREATESTRUCT pcs = (LPCREATESTRUCT)lParam;
+		pWindow = (Window *)pcs->lpCreateParams;
+		break;
+	}
+
+	case WM_PAINT:
+		if (pWindow != nullptr)
+		{
+			ps.fErase == 0;
+			dc = BeginPaint(hWnd, &ps);
+
+			pWindow->onPaint(dc);
+
+			EndPaint(hWnd, &ps);
+		}
+		return 0;
+
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		break;
 
 	case WM_NCHITTEST:
 		return HTCAPTION;
-
-	default:
-		return DefWindowProc(hWnd, message, wParam, lParam);
 	}
+	return DefWindowProc(hWnd, message, wParam, lParam);
 }
 
 
@@ -42,7 +63,7 @@ bool Window::Initialize()
 	wcex.style = CS_HREDRAW | CS_VREDRAW;
 	wcex.lpfnWndProc = Window::WindowProc;
 	wcex.cbClsExtra = 0;
-	wcex.cbWndExtra = 0;
+	wcex.cbWndExtra = sizeof(LONG_PTR);
 	wcex.hInstance = HINST_THISCOMPONENT;
 	wcex.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
 	wcex.lpszMenuName = NULL;
@@ -103,4 +124,31 @@ void Window::SetBackgroundColor(BYTE r, BYTE g, BYTE b)
 	m_g = g;
 	m_b = b;
 	//InvalidateRect(m_hWnd, NULL, true);
+}
+
+
+// 响应WM_PAINT消息
+void Window::onPaint(HDC dc)
+{
+	// 创建内存兼容DC，准备双缓冲
+	HDC hMemDC = CreateCompatibleDC(dc);
+	RECT rc;
+	GetClientRect(m_hWnd, &rc);
+	HBITMAP hMemBitMap = CreateCompatibleBitmap(dc, rc.right, rc.bottom);
+	SelectObject(hMemDC, hMemBitMap);
+	// 根据内存DC创建GDI+绘制对象
+	Gdiplus::Graphics graphics(hMemDC);
+	// 设置反走样
+	graphics.SetSmoothingMode(Gdiplus::SmoothingModeHighQuality);
+
+	// 清理背景
+	Gdiplus::SolidBrush brush(Gdiplus::Color(m_r, m_g, m_b));
+	graphics.FillRectangle(&brush, -1, -1, rc.right+1, rc.bottom+1);
+
+	// 绘制控件
+
+	// 复制到目标DC
+	BitBlt(dc, 0, 0, rc.right, rc.bottom, hMemDC, 0, 0, SRCCOPY);
+
+	DeleteDC(hMemDC);
 }
