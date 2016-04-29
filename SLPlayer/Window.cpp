@@ -35,7 +35,6 @@ LRESULT CALLBACK Window::WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPAR
 	case WM_PAINT:
 		if (pWindow != nullptr)
 		{
-			ps.fErase == 0;
 			dc = BeginPaint(hWnd, &ps);
 
 			pWindow->onPaint(dc);
