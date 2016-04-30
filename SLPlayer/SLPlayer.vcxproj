@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClInclude Include="App.h" />
     <ClInclude Include="GdiPlusHost.h" />
+    <ClInclude Include="ProgressBar.h" />
     <ClInclude Include="RoundButton.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
@@ -157,6 +158,7 @@
     <ClCompile Include="App.cpp" />
     <ClCompile Include="GdiPlusHost.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ProgressBar.cpp" />
     <ClCompile Include="RoundButton.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
