@@ -7,13 +7,13 @@ class RoundButton
 {
 public:
 	// 按钮事件：按下、弹起、点击
-	enum Event
+	enum class Event:unsigned int
 	{
 		PRESS_DOWN, POP_UP, CLICK
 	};
 
 	// 按钮的状态：弹起，弹起+鼠标移入，按下
-	enum State
+	enum class State:unsigned int
 	{
 		UP, UP_HIGHLIGHT, DOWN
 	};
@@ -35,7 +35,7 @@ public:
 	bool connect(Event event, std::function<void()> action);
 
 private:
-	State m_state = UP; // 按钮的状态
+	State m_state = State::UP; // 按钮的状态
 	std::map<Event, std::function<void()>> m_eventToAction; // 事件和响应动作之间的映射
 };
 
