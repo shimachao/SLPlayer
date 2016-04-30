@@ -32,7 +32,7 @@ public:
 	// 按钮弹起
 	void up();
 	// 连接事件和响应动作
-	bool connect(Event event, std::function<void()> action);
+	void connect(Event event, std::function<void()> action);
 
 private:
 	State m_state = State::UP; // 按钮的状态
