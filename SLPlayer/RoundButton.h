@@ -5,19 +5,6 @@
 
 class RoundButton
 {
-public:
-	// 按钮事件：按下、弹起、点击
-	enum class Event:unsigned int
-	{
-		PRESS_DOWN, POP_UP, CLICK
-	};
-
-	// 按钮的状态：弹起，弹起+鼠标移入，按下
-	enum class State:unsigned int
-	{
-		UP, UP_HIGHLIGHT, DOWN
-	};
-
 
 public:
 	RoundButton();
@@ -32,7 +19,22 @@ public:
 	// 按钮弹起
 	void up();
 	// 连接事件和响应动作
+	enum class Event :unsigned int;
 	void connect(Event event, std::function<void()> action);
+
+	// --------------------类型定义----------------------------
+public:
+	// 按钮事件：按下、弹起、点击
+	enum class Event :unsigned int
+	{
+		PRESS_DOWN, POP_UP, CLICK
+	};
+
+	// 按钮的状态：弹起，弹起+鼠标移入，按下
+	enum class State :unsigned int
+	{
+		UP, UP_HIGHLIGHT, DOWN
+	};
 
 private:
 	State m_state = State::UP; // 按钮的状态
