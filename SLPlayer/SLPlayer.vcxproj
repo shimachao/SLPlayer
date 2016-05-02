@@ -151,6 +151,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
+    <ClInclude Include="ButtonController.h" />
     <ClInclude Include="ButtonModel.h" />
     <ClInclude Include="ButtonView.h" />
     <ClInclude Include="GdiPlusHost.h" />
@@ -162,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="ButtonController.cpp" />
     <ClCompile Include="ButtonModel.cpp" />
     <ClCompile Include="ButtonView.cpp" />
     <ClCompile Include="GdiPlusHost.cpp" />
