@@ -23,7 +23,26 @@ void ButtonView::set_model(ButtonModel *model)
 // 绘制
 void ButtonView::draw(Gdiplus::Graphics &g)
 {
-
+	if (m_model)
+	{
+		auto state = m_model->get_state();
+		switch (state)
+		{
+		case ButtonModel::State::NORMAL:
+			normal_draw(g);
+			break;
+		case ButtonModel::State::HIGHLIGHT:
+			highlight_draw(g);
+			break;
+		case ButtonModel::State::DOWN:
+			down_draw(g);
+			break;
+		}
+	}
+	else
+	{
+		// todo:绘制说明没有对应的模型
+	}
 }
 
 
@@ -51,19 +70,19 @@ void ButtonView::set_down_img(Gdiplus::Image *img)
 // 正常状态绘制
 void ButtonView::normal_draw(Gdiplus::Graphics &g)
 {
-
+	// todo
 }
 
 
 // 高亮绘制
 void ButtonView::highlight_draw(Gdiplus::Graphics &g)
 {
-
+	// todo
 }
 
 
 // 按下状态时绘制
 void ButtonView::down_draw(Gdiplus::Graphics &g)
 {
-
+	// todo
 }
