@@ -14,8 +14,7 @@ public:
 	void turn_to_normal();
 	// 状态转为按下
 	void turn_to_down();
-	// 单击
-	void click();
+
 	// 连接事件和动作
 	enum class Event;
 	void connect(Event e, std::function<void()> action);

@@ -34,16 +34,6 @@ void ButtonModel::turn_to_down()
 }
 
 
-// 单击
-void ButtonModel::click()
-{
-	if (m_eventToAction[Event::CLICK])
-	{
-		m_eventToAction[Event::CLICK]();
-	}
-}
-
-
 // 连接事件和动作
 void ButtonModel::connect(Event e, std::function<void()> action)
 {
