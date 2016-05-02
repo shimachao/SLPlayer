@@ -151,15 +151,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
+    <ClInclude Include="ButtonModel.h" />
     <ClInclude Include="ButtonView.h" />
     <ClInclude Include="GdiPlusHost.h" />
     <ClInclude Include="LabelView.h" />
     <ClInclude Include="ProgressBar.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="RoundButton.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="ButtonModel.cpp" />
     <ClCompile Include="ButtonView.cpp" />
     <ClCompile Include="GdiPlusHost.cpp" />
     <ClCompile Include="LabelView.cpp" />
@@ -167,6 +170,9 @@
     <ClCompile Include="ProgressBar.cpp" />
     <ClCompile Include="RoundButton.cpp" />
     <ClCompile Include="Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SLPlayer.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
