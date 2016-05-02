@@ -14,6 +14,8 @@ public:
 	void turn_to_normal();
 	// 状态转为按下
 	void turn_to_down();
+	// 被单击了
+	void click();
 
 	// 查询状态
 	enum class State;
