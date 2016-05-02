@@ -31,6 +31,10 @@ void ButtonModel::turn_to_normal()
 void ButtonModel::turn_to_down()
 {
 	m_state = State::PRESSDOWN;
+	if (m_eventToAction[Event::CLICK])
+	{
+		m_eventToAction[Event::CLICK]();
+	}
 }
 
 
