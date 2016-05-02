@@ -14,8 +14,13 @@ public:
 
 	// 绘制
 	void draw(Gdiplus::Graphics &g);
-	// 设置图片
-	void set_img(Gdiplus::Image *img);
+
+	// 设置正常状态时的背景图片
+	void set_normal_img(Gdiplus::Image *img);
+	// 设置高亮时的背景图片
+	void set_highlight_img(Gdiplus::Image *img);
+	// 设置按下时的背景图片
+	void set_down_img(Gdiplus::Image *img);
 
 private:
 	// 正常状态绘制
@@ -30,7 +35,9 @@ private:
 	int m_top; // 顶端
 	int m_width; // 宽
 	int m_height; // 高
-	Gdiplus::Image *m_img; // 背景图片
+	Gdiplus::Image *m_normal_img = nullptr; // 正常状态时的背景图片
+	Gdiplus::Image *m_highlight_img = nullptr; // 高亮时的背景图片
+	Gdiplus::Image *m_down_img = nullptr; // 按下时的背景图片
 
 	ButtonModel *m_model = nullptr; // model引用
 };

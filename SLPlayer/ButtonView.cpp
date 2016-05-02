@@ -3,7 +3,7 @@
 
 
 ButtonView::ButtonView(int left, int top, int width, int height)
-	:m_left(left), m_top(top), m_width(width), m_height(height), m_img(nullptr)
+	:m_left(left), m_top(top), m_width(width), m_height(height), m_normal_img(nullptr)
 {
 }
 
@@ -27,10 +27,24 @@ void ButtonView::draw(Gdiplus::Graphics &g)
 }
 
 
-// 设置图片
-void ButtonView::set_img(Gdiplus::Image *img)
+// 设置正常状态时的背景图片
+void ButtonView::set_normal_img(Gdiplus::Image *img)
 {
-	m_img = img;
+	m_normal_img = img;
+}
+
+
+// 设置高亮时的背景图片
+void ButtonView::set_highlight_img(Gdiplus::Image *img)
+{
+	m_highlight_img = img;
+}
+
+
+// 设置按下时的背景图片
+void ButtonView::set_down_img(Gdiplus::Image *img)
+{
+	m_down_img = img;
 }
 
 
