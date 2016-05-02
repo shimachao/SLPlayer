@@ -31,7 +31,6 @@ void ButtonModel::turn_to_normal()
 void ButtonModel::turn_to_down()
 {
 	m_state = State::DOWN;
-	
 }
 
 
