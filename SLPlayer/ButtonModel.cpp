@@ -13,15 +13,15 @@ ButtonModel::~ButtonModel()
 }
 
 
-// 光标移入
-void ButtonModel::mouse_move_in()
+// 状态转为高亮
+void ButtonModel::turn_to_highlight()
 {
 	m_state = State::HIGHLIGHT;
 }
 
 
-// 光标移出
-void ButtonModel::mouse_move_out()
+// 状态转为正常
+void ButtonModel::turn_to_normal()
 {
 	m_state = State::NORMAL;
 }
