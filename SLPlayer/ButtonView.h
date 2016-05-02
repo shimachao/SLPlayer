@@ -23,7 +23,7 @@ private:
 	// 高亮绘制
 	void highlight_draw(Gdiplus::Graphics &g);
 	// 按下状态时绘制
-	void press_down_draw(Gdiplus::Graphics &g);
+	void down_draw(Gdiplus::Graphics &g);
 
 private:
 	int m_left; // 绘制范围左侧

@@ -49,7 +49,7 @@ void ButtonView::highlight_draw(Gdiplus::Graphics &g)
 
 
 // 按下状态时绘制
-void ButtonView::press_down_draw(Gdiplus::Graphics &g)
+void ButtonView::down_draw(Gdiplus::Graphics &g)
 {
 
 }
