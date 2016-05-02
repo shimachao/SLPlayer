@@ -15,6 +15,10 @@ public:
 	// 状态转为按下
 	void turn_to_down();
 
+	// 查询状态
+	enum class State;
+	State get_state() const;
+
 	// 连接事件和动作
 	enum class Event;
 	void connect(Event e, std::function<void()> action);

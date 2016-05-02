@@ -38,6 +38,12 @@ void ButtonModel::turn_to_down()
 }
 
 
+// 查询状态
+ButtonModel::State ButtonModel::get_state() const
+{
+	return m_state;
+}
+
 // 连接事件和动作
 void ButtonModel::connect(Event e, std::function<void()> action)
 {
