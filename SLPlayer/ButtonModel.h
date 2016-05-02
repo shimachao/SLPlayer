@@ -22,7 +22,15 @@ public:
 		CLICK
 	};
 
+public:
+	// 按钮的状态：正常、高亮、按下
+	enum class State
+	{
+		NORMAL, HIGHLIGHT, PRESSDOWN
+	};
+
 private:
 	std::map<Event, std::function<void()>> m_eventToAction; // 事件和响应动作之间的映射
+	State m_state = State::NORMAL;
 };
 
