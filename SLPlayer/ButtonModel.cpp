@@ -13,6 +13,20 @@ ButtonModel::~ButtonModel()
 }
 
 
+// 光标移入
+void ButtonModel::mouse_move_in()
+{
+	m_state = State::HIGHLIGHT;
+}
+
+
+// 光标移出
+void ButtonModel::mouse_move_out()
+{
+	m_state = State::NORMAL;
+}
+
+
 // 单击
 void ButtonModel::click()
 {

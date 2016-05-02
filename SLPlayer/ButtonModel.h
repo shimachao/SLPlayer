@@ -8,6 +8,10 @@ public:
 	ButtonModel();
 	~ButtonModel();
 
+	// 光标移入
+	void mouse_move_in();
+	// 光标移出
+	void mouse_move_out();
 	// 单击
 	void click();
 	// 连接事件和动作
