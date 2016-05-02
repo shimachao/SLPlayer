@@ -13,6 +13,13 @@ ButtonView::~ButtonView()
 }
 
 
+// …Ë÷√model
+void ButtonView::set_model(ButtonModel *model)
+{
+	m_model = model;
+}
+
+
 // ªÊ÷∆
 void ButtonView::draw(Gdiplus::Graphics &g)
 {

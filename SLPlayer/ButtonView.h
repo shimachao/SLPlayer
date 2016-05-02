@@ -1,12 +1,16 @@
 #pragma once
 #include <comdef.h>
 #include <Gdiplus.h>
+#include "ButtonModel.h"
 
 class ButtonView
 {
 public:
 	ButtonView(int left, int top, int width, int height);
 	~ButtonView();
+
+	// 设置model
+	void set_model(ButtonModel *model);
 
 	// 绘制
 	void draw(Gdiplus::Graphics &g);
@@ -27,5 +31,7 @@ private:
 	int m_width; // 宽
 	int m_height; // 高
 	Gdiplus::Image *m_img; // 背景图片
+
+	ButtonModel *m_model = nullptr; // model引用
 };
 
