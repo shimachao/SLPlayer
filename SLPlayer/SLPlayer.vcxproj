@@ -76,6 +76,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files\Microsoft SDKs\Windows\v7.1\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\Microsoft SDKs\Windows\v7.1\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -149,6 +151,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
+    <ClInclude Include="ButtonView.h" />
     <ClInclude Include="GdiPlusHost.h" />
     <ClInclude Include="LabelView.h" />
     <ClInclude Include="ProgressBar.h" />
@@ -157,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="ButtonView.cpp" />
     <ClCompile Include="GdiPlusHost.cpp" />
     <ClCompile Include="LabelView.cpp" />
     <ClCompile Include="main.cpp" />
