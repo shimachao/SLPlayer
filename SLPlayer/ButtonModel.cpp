@@ -30,7 +30,7 @@ void ButtonModel::turn_to_normal()
 // 状态转为按下
 void ButtonModel::turn_to_down()
 {
-	m_state = State::PRESSDOWN;
+	m_state = State::DOWN;
 	if (m_eventToAction[Event::CLICK])
 	{
 		m_eventToAction[Event::CLICK]();

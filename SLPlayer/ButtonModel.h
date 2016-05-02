@@ -35,7 +35,7 @@ public:
 	// 按钮的状态：正常、高亮、按下
 	enum class State
 	{
-		NORMAL, HIGHLIGHT, PRESSDOWN
+		NORMAL, HIGHLIGHT, DOWN
 	};
 
 private:
