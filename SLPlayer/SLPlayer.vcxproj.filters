@@ -27,9 +27,6 @@
     <ClInclude Include="RoundButton.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="ProgressBar.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="LabelView.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -51,6 +48,9 @@
     <ClInclude Include="ProgressModel.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ProgressView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
@@ -66,9 +66,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="RoundButton.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ProgressBar.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="LabelView.cpp">
@@ -87,6 +84,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ProgressModel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressView.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
