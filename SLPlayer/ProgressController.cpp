@@ -78,6 +78,16 @@ void ProgressController::mouse_move_over()
 		GetCursorPos(&p);
 		// 根据光标在x方向上的移动距离移动滑块
 		m_slider_left += p.x - m_mouse_pos.x;
+		// 保证滑块在滑道范围内
+		if (m_slider_left <= m_left)
+		{
+			m_slider_left = m_left;
+		}
+		else if (m_slider_left + m_slider_width > m_left + m_width)
+		{
+			m_slider_left = m_left + m_width - m_slider_width;
+		}
+
 		m_mouse_pos = p;
 	}
 }
