@@ -160,7 +160,6 @@
     <ClInclude Include="ProgressModel.h" />
     <ClInclude Include="ProgressView.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="RoundButton.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
@@ -174,7 +173,6 @@
     <ClCompile Include="ProgressController.cpp" />
     <ClCompile Include="ProgressModel.cpp" />
     <ClCompile Include="ProgressView.cpp" />
-    <ClCompile Include="RoundButton.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
