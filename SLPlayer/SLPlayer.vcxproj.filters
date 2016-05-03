@@ -45,6 +45,12 @@
     <ClInclude Include="ButtonController.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ProgressController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressModel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
@@ -75,6 +81,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ButtonController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressModel.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
