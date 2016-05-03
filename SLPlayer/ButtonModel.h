@@ -33,7 +33,6 @@ public:
 		CLICK
 	};
 
-public:
 	// 按钮的状态：正常、高亮、按下
 	enum class State
 	{
