@@ -48,6 +48,12 @@
     <ClInclude Include="ProgressView.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="LabelModel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LabelController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
@@ -81,6 +87,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ProgressView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LabelModel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LabelController.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
