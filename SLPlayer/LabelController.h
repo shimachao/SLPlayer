@@ -1,5 +1,6 @@
 #pragma once
 #include "LabelModel.h"
+#include "LabelView.h"
 
 class LabelController
 {
@@ -29,6 +30,7 @@ private:
 	int m_width;
 	int m_height;
 
-	LabelModel *m_model = nullptr;
+	LabelModel *m_model = nullptr; // model引用
+	LabelView *m_view = nullptr; // view引用
 };
 
