@@ -155,6 +155,7 @@
     <ClInclude Include="ButtonModel.h" />
     <ClInclude Include="ButtonView.h" />
     <ClInclude Include="GdiPlusHost.h" />
+    <ClInclude Include="LabelModel.h" />
     <ClInclude Include="LabelView.h" />
     <ClInclude Include="ProgressController.h" />
     <ClInclude Include="ProgressModel.h" />
@@ -168,6 +169,7 @@
     <ClCompile Include="ButtonModel.cpp" />
     <ClCompile Include="ButtonView.cpp" />
     <ClCompile Include="GdiPlusHost.cpp" />
+    <ClCompile Include="LabelModel.cpp" />
     <ClCompile Include="LabelView.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ProgressController.cpp" />
