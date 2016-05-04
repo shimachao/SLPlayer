@@ -50,3 +50,10 @@ void LabelView::edit_draw(Gdiplus::Graphics &g)
 {
 	//todo:绘制光标、文字、选中效果
 }
+
+
+// 查询一个字符的宽度
+int LabelView::get_char_width() const
+{
+	// todo
+}
