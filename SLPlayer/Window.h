@@ -23,6 +23,16 @@ public:
 	void SetBackgroundColor(BYTE r, BYTE g, BYTE b);
 	// 响应WM_PAINT消息
 	void onPaint(HDC dc);
+	// 响应鼠标移动消息
+	void onMouseMove();
+	// 响应鼠标左键单击消息
+	void onLeftButtonDown();
+	// 响应鼠标左键弹起消息
+	void onLeftButtonUp();
+	// 响应鼠标左键双击消息
+	void onLeftButtonDoubleClick();
+	// 响应NCHITTEST消息
+	LRESULT onNcHitTest();
 
 private:
 	// 窗口过程函数

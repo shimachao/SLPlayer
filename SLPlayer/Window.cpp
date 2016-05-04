@@ -43,13 +43,38 @@ LRESULT CALLBACK Window::WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPAR
 		}
 		return 0;
 
+	case WM_LBUTTONDOWN:
+		if (pWindow)
+		{
+			pWindow->onLeftButtonDown();
+		}
+		break;
+
+	case WM_LBUTTONUP:
+		if (pWindow)
+		{
+			pWindow->onLeftButtonUp();
+		}
+		break;
+		
+	case WM_LBUTTONDBLCLK:
+		break;
+
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		break;
 
 	case WM_NCHITTEST:
-		return HTCAPTION;
+		if (pWindow != nullptr)
+		{
+			pWindow->onNcHitTest();
+		}
+		else
+		{
+			return HTCAPTION;
+		}
 	}
+
 	return DefWindowProc(hWnd, message, wParam, lParam);
 }
 
@@ -150,4 +175,39 @@ void Window::onPaint(HDC dc)
 	BitBlt(dc, 0, 0, rc.right, rc.bottom, hMemDC, 0, 0, SRCCOPY);
 
 	DeleteDC(hMemDC);
+}
+
+
+// 响应鼠标移动消息
+void Window::onMouseMove()
+{
+	// todo
+}
+
+
+// 响应鼠标左键单击消息
+void Window::onLeftButtonDown()
+{
+	// todo
+}
+
+
+// 响应鼠标左键弹起消息
+void Window::onLeftButtonUp()
+{
+	// todo
+}
+
+
+// 响应鼠标左键双击消息
+void Window::onLeftButtonDoubleClick()
+{
+	//todo
+}
+
+
+// 响应NCHITTEST消息
+LRESULT Window::onNcHitTest()
+{
+	return HTCAPTION;
 }
