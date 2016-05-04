@@ -24,9 +24,6 @@
     <ClInclude Include="App.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="LabelView.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="ButtonView.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -66,9 +63,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="App.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="LabelView.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ButtonView.cpp">

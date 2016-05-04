@@ -157,7 +157,6 @@
     <ClInclude Include="GdiPlusHost.h" />
     <ClInclude Include="LabelController.h" />
     <ClInclude Include="LabelModel.h" />
-    <ClInclude Include="LabelView.h" />
     <ClInclude Include="ProgressController.h" />
     <ClInclude Include="ProgressModel.h" />
     <ClInclude Include="ProgressView.h" />
@@ -172,7 +171,6 @@
     <ClCompile Include="GdiPlusHost.cpp" />
     <ClCompile Include="LabelController.cpp" />
     <ClCompile Include="LabelModel.cpp" />
-    <ClCompile Include="LabelView.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ProgressController.cpp" />
     <ClCompile Include="ProgressModel.cpp" />
