@@ -13,8 +13,6 @@ public:
 	void set_model(LabelModel *model);
 	// 绘制
 	void draw(Gdiplus::Graphics &g);
-	// 查询一个字符的宽度
-	int get_char_width() const;
 
 private:
 	// 显示状态的绘制
