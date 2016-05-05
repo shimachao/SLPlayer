@@ -150,6 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractView.h" />
     <ClInclude Include="App.h" />
     <ClInclude Include="ButtonController.h" />
     <ClInclude Include="ButtonModel.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractView.cpp" />
     <ClCompile Include="App.cpp" />
     <ClCompile Include="ButtonController.cpp" />
     <ClCompile Include="ButtonModel.cpp" />
