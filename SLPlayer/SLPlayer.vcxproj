@@ -150,6 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractControl.h" />
     <ClInclude Include="AbstractController.h" />
     <ClInclude Include="AbstractView.h" />
     <ClInclude Include="App.h" />
@@ -182,9 +183,6 @@
     <ClCompile Include="ProgressModel.cpp" />
     <ClCompile Include="ProgressView.cpp" />
     <ClCompile Include="Window.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="SLPlayer.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

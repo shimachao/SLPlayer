@@ -60,6 +60,9 @@
     <ClInclude Include="AbstractController.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="AbstractControl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
@@ -107,10 +110,5 @@
     <ClCompile Include="AbstractController.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="SLPlayer.rc">
-      <Filter>资源文件</Filter>
-    </ResourceCompile>
   </ItemGroup>
 </Project>
