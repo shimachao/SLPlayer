@@ -36,33 +36,40 @@ bool LabelController::hit_test(int x, int y) const
 // 光标移出
 void LabelController::mouse_move_out()
 {
-
+	//todo
 }
 
 
 // 光标移入
 void LabelController::mouse_move_in()
 {
-
+	//todo
 }
 
 
 // 光标移动消息
 void LabelController::mouse_move_over()
 {
-
+	//todo
 }
 
 
 // 鼠标左键按下
 void LabelController::left_button_down()
 {
-
+	//todo
 }
 
 
 // 鼠标左键弹起
 void LabelController::left_button_up()
 {
+	// todo
+}
 
+
+// 收到WM_CHAR消息
+void LabelController::receive_char(wchar_t c)
+{
+	// todo
 }
