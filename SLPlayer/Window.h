@@ -1,5 +1,7 @@
 #pragma once
 #include <Windows.h>
+#include "AbstractControl.h"
+#include <vector>
 
 #ifndef HINST_THISCOMPONENT
 EXTERN_C IMAGE_DOS_HEADER __ImageBase;
@@ -45,5 +47,6 @@ private:
 	BYTE m_r; // 背景颜色的r分量
 	BYTE m_g; // 背景颜色的g分量
 	BYTE m_b; // 背景颜色的b分量
+	std::vector<AbstractControl*> m_controls;
 };
 
