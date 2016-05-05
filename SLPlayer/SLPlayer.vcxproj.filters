@@ -57,6 +57,9 @@
     <ClInclude Include="AbstractView.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="AbstractController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
@@ -99,6 +102,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="AbstractView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractController.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
