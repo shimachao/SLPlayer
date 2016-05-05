@@ -23,6 +23,8 @@ public:
 	void left_button_down();
 	// 鼠标左键弹起
 	void left_button_up();
+	// 鼠标左键双击
+	void left_button_double_click();
 	// 收到WM_CHAR消息
 	void receive_char(wchar_t c);
 

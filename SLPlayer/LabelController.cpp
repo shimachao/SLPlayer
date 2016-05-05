@@ -73,3 +73,13 @@ void LabelController::receive_char(wchar_t c)
 {
 	// todo
 }
+
+
+// Êó±ê×ó¼üË«»÷
+void LabelController::left_button_double_click()
+{
+	if (m_model && m_model->get_state() == LabelModel::State::DISPLAY)
+	{
+		m_model->turn_to_edit();
+	}
+}
