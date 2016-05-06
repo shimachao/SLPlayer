@@ -27,17 +27,10 @@ void ProgressModel::turn_to_normal()
 }
 
 
-// 转为滑道高亮
-void ProgressModel::turn_to_slide_highlight()
+// 转为高亮
+void ProgressModel::turn_to_highlight()
 {
-	m_state = State::SLIDE_HIGHLIGHT;
-}
-
-
-// 转为滑道和滑块都高亮
-void ProgressModel::turn_to_all_highlight()
-{
-	m_state = State::ALL_HIGHLIGHT;
+	m_state = State::HIGHLIGHT;
 }
 
 

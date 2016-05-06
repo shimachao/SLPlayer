@@ -10,11 +10,9 @@ public:
 
 	// 转为正常
 	void turn_to_normal();
-	// 转为滑道高亮
-	void turn_to_slide_highlight();
-	// 转为滑道和滑块都高亮
-	void turn_to_all_highlight();
-
+	// 转为高亮
+	void turn_to_highlight();
+	
 	// 设置范围
 	void set_range(int start, int end);
 	// 设置进度位置
@@ -28,10 +26,10 @@ public:
 
 	// --------------------类型定义----------------------------
 public:
-	// 进度的状态：正常、滑道高亮，滑道和滑块都高亮
+	// 进度的状态：正常、高亮
 	enum class State
 	{
-		NORMAL, SLIDE_HIGHLIGHT, ALL_HIGHLIGHT
+		NORMAL, HIGHLIGHT
 	};
 
 	// 进度条事件：设置位置，进度完成
