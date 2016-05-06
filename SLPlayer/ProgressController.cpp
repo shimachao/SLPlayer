@@ -81,10 +81,3 @@ void ProgressController::left_button_down()
 void ProgressController::left_button_up()
 {
 }
-
-
-// 查询是否跟踪鼠标移动
-bool ProgressController::track_mouse_move()
-{
-	return m_track_mouse_move;
-}

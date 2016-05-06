@@ -21,8 +21,6 @@ public:
 	void left_button_down();
 	// 鼠标左键弹起
 	void left_button_up();
-	// 查询是否跟踪鼠标移动
-	bool track_mouse_move();
 
 private:
 	// 进度条坐标
@@ -32,7 +30,6 @@ private:
 	int m_height;
 
 	POINT m_mouse_pos; // 光标位置
-	bool m_track_mouse_move = false; // 是否跟踪光标移动
 	ProgressModel *m_mode = nullptr; // model的引用
 };
 
