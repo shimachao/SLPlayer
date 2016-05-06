@@ -32,16 +32,9 @@ private:
 	int m_top;
 	int m_width;
 	int m_height;
-	// 进度条滑块的坐标
-	int m_slider_left;
-	int m_slider_top;
-	int m_slider_width;
-	int m_slider_height;
 
 	POINT m_mouse_pos; // 光标位置
-
 	bool m_track_mouse_move = false; // 是否跟踪光标移动
-
 	ProgressModel *m_mode = nullptr; // model的引用
 };
 

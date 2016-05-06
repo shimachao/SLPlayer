@@ -52,43 +52,10 @@ void ProgressController::mouse_move_in()
 	HWND hwnd = GetCapture();
 	ScreenToClient(hwnd, &p);
 
-	if (p.x >= m_slider_left && p.x <= m_slider_left+m_slider_width)
+	
+	if (m_mode)
 	{
-		// 如果光标在滑块上
-		if (m_mode)
-		{
-			m_mode->turn_to_all_highlight();
-		}
-	}
-	else
-	{
-		// 如果光标在滑道上
-		m_mode->turn_to_slide_highlight();
-	}
-}
-
-
-// 光标移动消息
-void ProgressController::mouse_move_over()
-{
-	if (m_track_mouse_move)
-	{
-		// 查询当前光标位置
-		POINT p;
-		GetCursorPos(&p);
-		// 根据光标在x方向上的移动距离移动滑块
-		m_slider_left += p.x - m_mouse_pos.x;
-		// 保证滑块在滑道范围内
-		if (m_slider_left <= m_left)
-		{
-			m_slider_left = m_left;
-		}
-		else if (m_slider_left + m_slider_width > m_left + m_width)
-		{
-			m_slider_left = m_left + m_width - m_slider_width;
-		}
-
-		m_mouse_pos = p;
+		m_mode->turn_to_all_highlight();
 	}
 }
 
@@ -102,16 +69,10 @@ void ProgressController::left_button_down()
 	HWND hwnd = GetCapture();
 	ScreenToClient(hwnd, &p);
 
-	if (p.x >= m_slider_left && p.x <= m_slider_left + m_slider_width)
-	{
-		// 如果光标在滑块上， 开始随光标的移动来移动滑块
-		m_track_mouse_move = true;
-		GetCursorPos(&m_mouse_pos); // 记下光标位置
-	}
-	else
+	if (p.x >= m_left && p.x <= m_left + m_width)
 	{
 		// 如果光标在滑道上
-		// todo ：设置进度
+		GetCursorPos(&m_mouse_pos); // 记下光标位置
 	}
 }
 
@@ -119,38 +80,6 @@ void ProgressController::left_button_down()
 // 鼠标左键弹起
 void ProgressController::left_button_up()
 {
-	if (m_track_mouse_move)
-	{
-		m_track_mouse_move = false;
-		// todo：设置进度
-
-		// 查询当前光标位置，判断光标是在滑道还是滑块上
-		POINT p;
-		GetCursorPos(&p);
-		HWND hwnd = GetCapture();
-		ScreenToClient(hwnd, &p);
-
-		if (p.x >= m_slider_left && p.x <= m_slider_left + m_slider_width
-			&& p.y >= m_slider_top && p.y <= m_slider_top + m_slider_height )
-		{
-			// 如果光标在滑块上
-			if (m_mode)
-			{
-				m_mode->turn_to_all_highlight();
-			}
-		}
-		else if (p.x >= m_left && p.x <= m_left + m_width
-			     && p.y >= m_top && p.y <= m_top + m_height)
-		{
-			// 如果光标在滑道上
-			m_mode->turn_to_slide_highlight();
-		}
-		else
-		{
-			// 如果不在进度条上
-			m_mode->turn_to_normal();
-		}
-	}
 }
 
 
