@@ -72,7 +72,8 @@ void ProgressController::left_button_down()
 	if (p.x >= m_left && p.x <= m_left + m_width)
 	{
 		// 如果光标在滑道上
-		GetCursorPos(&m_mouse_pos); // 记下光标位置
+		POINT point;
+		GetCursorPos(&point); // 查询光标位置
 	}
 }
 

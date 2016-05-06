@@ -29,7 +29,6 @@ private:
 	int m_width;
 	int m_height;
 
-	POINT m_mouse_pos; // 光标位置
 	ProgressModel *m_mode = nullptr; // model的引用
 };
 
