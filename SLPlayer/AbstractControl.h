@@ -7,7 +7,4 @@ class AbstractControl:public AbstractView,public AbstractController
 public:
 	AbstractControl() = default;
 	~AbstractControl() = default;
-
-private:
-
 };
