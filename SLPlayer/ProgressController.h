@@ -17,8 +17,6 @@ public:
 	void mouse_move_out();
 	// 光标移入
 	void mouse_move_in();
-	// 光标移动消息
-	void mouse_move_over();
 	// 鼠标左键按下
 	void left_button_down();
 	// 鼠标左键弹起
