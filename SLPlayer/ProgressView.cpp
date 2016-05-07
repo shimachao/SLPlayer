@@ -51,7 +51,7 @@ void ProgressView::draw(Gdiplus::Graphics &g)
 void ProgressView::normal_draw(Gdiplus::Graphics &g)
 {
 	// 绘制边框
-	Gdiplus::Pen whitePen(Gdiplus::Color::White);
+	Gdiplus::Pen whitePen(Gdiplus::Color::Gray);
 	g.DrawRectangle(&whitePen, m_left, m_top, m_width, m_height);
 	// 绘制进度
 	int real_start, real_end, real_pos; // 实际数据的范围和进度
@@ -67,5 +67,14 @@ void ProgressView::normal_draw(Gdiplus::Graphics &g)
 // 高亮时的绘制方法
 void ProgressView::highlight_draw(Gdiplus::Graphics &g)
 {
-	// todo
+	// 绘制边框
+	Gdiplus::Pen whitePen(Gdiplus::Color::White);
+	g.DrawRectangle(&whitePen, m_left, m_top, m_width, m_height);
+	// 绘制进度
+	int real_start, real_end, real_pos; // 实际数据的范围和进度
+	m_model->get_range_pos(real_start, real_end, real_pos);
+
+	int pos = ((real_pos - real_start) / (real_end - real_start))*m_width; // 界面上绘制进度
+	Gdiplus::SolidBrush brush(Gdiplus::Color(200, 255, 255, 255));
+	g.FillRectangle(&brush, m_left, m_top, pos, m_height);
 }
