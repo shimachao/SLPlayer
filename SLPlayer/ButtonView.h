@@ -2,8 +2,9 @@
 #include <comdef.h>
 #include <Gdiplus.h>
 #include "ButtonModel.h"
+#include "AbstractView.h"
 
-class ButtonView
+class ButtonView : public AbstractView
 {
 public:
 	ButtonView(int left, int top, int width, int height);
@@ -12,8 +13,10 @@ public:
 	// 设置model
 	void set_model(ButtonModel *model);
 
+	// 设置范围
+	void set_pos(int left, int top, int width, int height) override;
 	// 绘制
-	void draw(Gdiplus::Graphics &g);
+	void draw(Gdiplus::Graphics &g) override;
 
 	// 设置正常状态时的背景图片
 	void set_normal_img(Gdiplus::Image *img);
