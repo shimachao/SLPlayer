@@ -32,12 +32,8 @@ void ProgressView::draw(Gdiplus::Graphics &g)
 			normal_draw(g);
 			break;
 
-		case ProgressModel::State::SLIDE_HIGHLIGHT:
-			slide_highlight_draw(g);
-			break;
-
-		case ProgressModel::State::ALL_HIGHLIGHT:
-			all_highlight_draw(g);
+		case ProgressModel::State::HIGHLIGHT:
+			highlight_draw(g);
 			break;
 		}
 	}
@@ -51,15 +47,8 @@ void ProgressView::normal_draw(Gdiplus::Graphics &g)
 }
 
 
-// 滑道高亮时的绘制方法
-void ProgressView::slide_highlight_draw(Gdiplus::Graphics &g)
-{
-	// todo
-}
-
-
-// 滑道和滑块都高亮时的绘制方法
-void ProgressView::all_highlight_draw(Gdiplus::Graphics &g)
+// 高亮时的绘制方法
+void ProgressView::highlight_draw(Gdiplus::Graphics &g)
 {
 	// todo
 }

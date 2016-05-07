@@ -17,11 +17,8 @@ public:
 private:
 	// 正常状态的绘制方法
 	void normal_draw(Gdiplus::Graphics &g);
-	// 滑道高亮时的绘制方法
-	void slide_highlight_draw(Gdiplus::Graphics &g);
-	// 滑道和滑块都高亮时的绘制方法
-	void all_highlight_draw(Gdiplus::Graphics &g);
-
+	// 高亮时的绘制方法
+	void highlight_draw(Gdiplus::Graphics &g);
 
 private:
 	// 进度条坐标
