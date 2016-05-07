@@ -2,8 +2,9 @@
 #include "LabelModel.h"
 #include <comdef.h>
 #include <gdiplus.h>
+#include "AbstractView.h"
 
-class LabelView
+class LabelView : public AbstractView
 {
 public:
 	LabelView(int left, int top, int width, int height);
@@ -11,8 +12,10 @@ public:
 
 	// 设置模型
 	void set_model(LabelModel *model);
+	// 设置范围
+	void set_pos(int left, int top, int width, int height) override;
 	// 绘制
-	void draw(Gdiplus::Graphics &g);
+	void draw(Gdiplus::Graphics &g) override;
 
 private:
 	// 显示状态的绘制

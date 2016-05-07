@@ -21,6 +21,16 @@ void LabelView::set_model(LabelModel *model)
 }
 
 
+// …Ë÷√∑∂Œß
+void LabelView::set_pos(int left, int top, int width, int height)
+{
+	m_left = left;
+	m_top = top;
+	m_width = width;
+	m_height = height;
+}
+
+
 // ªÊ÷∆
 void LabelView::draw(Gdiplus::Graphics &g)
 {
