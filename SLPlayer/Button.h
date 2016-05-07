@@ -11,6 +11,8 @@ public:
 	Button(int left, int top, int width, int height);
 	virtual ~Button();
 
+	// …Ë÷√ªÊ÷∆∑∂Œß
+	void set_pos(int left, int top, int width, int height) override;
 	// ªÊ÷∆
 	void draw(Gdiplus::Graphics &g) override;
 

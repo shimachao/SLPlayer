@@ -35,6 +35,14 @@ Button::~Button()
 }
 
 
+// …Ë÷√ªÊ÷∆∑∂Œß
+void Button::set_pos(int left, int top, int width, int height)
+{
+	m_view->set_pos(left, top, width, height);
+	m_controller->set_pos(left, top, width, height);
+}
+
+
 // ªÊ÷∆
 void Button::draw(Gdiplus::Graphics &g)
 {
