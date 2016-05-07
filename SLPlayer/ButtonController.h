@@ -10,6 +10,8 @@ public:
 	// 设置model
 	void set_model(ButtonModel *model);
 
+	// 设置范围
+	void set_pos(int left, int top, int width, int height) override;
 	// 击中测试
 	bool hit_test(int x, int y) const override;
 	// 光标移出

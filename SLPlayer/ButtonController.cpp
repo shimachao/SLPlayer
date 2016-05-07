@@ -20,6 +20,16 @@ void ButtonController::set_model(ButtonModel *model)
 }
 
 
+// …Ë÷√∑∂Œß
+void ButtonController::set_pos(int left, int top, int width, int height)
+{
+	m_left = left;
+	m_top = top;
+	m_width = width;
+	m_height = height;
+}
+
+
 // ª˜÷–≤‚ ‘
 bool ButtonController::hit_test(int x, int y) const
 {
