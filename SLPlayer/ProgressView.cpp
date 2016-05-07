@@ -33,19 +33,16 @@ void ProgressView::set_pos(int left, int top, int width, int height)
 // 绘制
 void ProgressView::draw(Gdiplus::Graphics &g)
 {
-	if (m_model)
+	auto state = m_model->get_state();
+	switch (state)
 	{
-		auto state = m_model->get_state();
-		switch (state)
-		{
-		case ProgressModel::State::NORMAL:
-			normal_draw(g);
-			break;
+	case ProgressModel::State::NORMAL:
+		normal_draw(g);
+		break;
 
-		case ProgressModel::State::HIGHLIGHT:
-			highlight_draw(g);
-			break;
-		}
+	case ProgressModel::State::HIGHLIGHT:
+		highlight_draw(g);
+		break;
 	}
 }
 
@@ -53,7 +50,17 @@ void ProgressView::draw(Gdiplus::Graphics &g)
 // 正常状态的绘制方法
 void ProgressView::normal_draw(Gdiplus::Graphics &g)
 {
-	// todo
+	// 绘制边框
+	Gdiplus::Pen whitePen(Gdiplus::Color::White);
+	g.DrawRectangle(&whitePen, m_left, m_top, m_width, m_height);
+	// 绘制进度
+	int real_start, real_end, real_pos; // 实际数据的范围和进度
+	m_model->get_range_pos(real_start, real_end, real_pos);
+
+	int pos = ((real_pos - real_start) / (real_end - real_start))*m_width; // 界面上绘制进度
+	Gdiplus::SolidBrush brush(Gdiplus::Color(100, 255, 255, 255));
+	g.FillRectangle(&brush, m_left, m_top, pos, m_height);
+
 }
 
 
