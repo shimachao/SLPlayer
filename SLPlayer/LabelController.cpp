@@ -20,6 +20,16 @@ void LabelController::set_model(LabelModel *model)
 }
 
 
+// …Ë÷√∑∂Œß
+void LabelController::set_pos(int left, int top, int width, int height)
+{
+	m_left = left;
+	m_top = top;
+	m_width = width;
+	m_height = height;
+}
+
+
 // ª˜÷–≤‚ ‘
 bool LabelController::hit_test(int x, int y) const
 {
