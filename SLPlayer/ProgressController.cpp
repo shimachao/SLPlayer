@@ -20,6 +20,16 @@ void ProgressController::set_model(ProgressModel *model)
 }
 
 
+// …Ë÷√∑∂Œß
+void ProgressController::set_pos(int left, int top, int width, int height)
+{
+	m_left = left;
+	m_top = top;
+	m_width = width;
+	m_height = height;
+}
+
+
 // ª˜÷–≤‚ ‘
 bool ProgressController::hit_test(int x, int y) const
 {
