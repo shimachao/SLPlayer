@@ -2,7 +2,7 @@
 #include "AbstractView.h"
 #include "AbstractController.h"
 
-class AbstractControl:public AbstractView,public AbstractController
+class AbstractControl:virtual public AbstractView,virtual public AbstractController
 {
 public:
 	AbstractControl() = default;
