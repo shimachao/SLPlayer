@@ -35,6 +35,14 @@ Label::~Label()
 }
 
 
+// …Ë÷√∑∂Œß
+void Label::set_pos(int left, int top, int width, int height)
+{
+	m_view->set_pos(left, top, width, height);
+	m_controller->set_pos(left, top, width, height);
+}
+
+
 // ªÊ÷∆
 void Label::draw(Gdiplus::Graphics &g)
 {

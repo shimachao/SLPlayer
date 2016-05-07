@@ -11,6 +11,8 @@ public:
 	Label(int left, int top, int width, int height);
 	virtual ~Label();
 
+	// …Ë÷√∑∂Œß
+	void set_pos(int left, int top, int width, int height) override;
 	// ªÊ÷∆
 	void draw(Gdiplus::Graphics &g) override;
 
