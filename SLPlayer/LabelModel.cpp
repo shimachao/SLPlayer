@@ -19,6 +19,13 @@ void LabelModel::set_text(std::wstring text)
 }
 
 
+// 查询字符
+std::wstring LabelModel::get_text() const
+{
+	return m_text;
+}
+
+
 // 添加字符，在光标所在位置添加
 void LabelModel::add_char(wchar_t c)
 {

@@ -9,6 +9,8 @@ public:
 
 	// 设置文本
 	void set_text(std::wstring text);
+	// 查询字符
+	std::wstring get_text() const;
 	// 添加字符，在光标所在位置添加
 	void add_char(wchar_t c);
 
