@@ -23,6 +23,9 @@ public:
 	// 查询状态
 	enum class State;
 	State get_state() const;
+	// 连接事件和响应
+	enum class Event;
+	void connect(Event e, std::function<void()> action);
 
 	// --------------------类型定义----------------------------
 public:

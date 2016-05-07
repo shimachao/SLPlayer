@@ -67,3 +67,10 @@ void ProgressModel::get_range_pos(int &start, int &end, int &pos) const
 	end = m_end;
 	pos = m_pos;
 }
+
+
+// 连接事件和响应
+void ProgressModel::connect(Event e, std::function<void()> action)
+{
+	m_eventToAction[e] = action;
+}
