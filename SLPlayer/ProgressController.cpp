@@ -55,7 +55,7 @@ void ProgressController::mouse_move_in()
 	
 	if (m_mode)
 	{
-		m_mode->turn_to_all_highlight();
+		m_mode->turn_to_highlight();
 	}
 }
 
