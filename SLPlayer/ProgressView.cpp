@@ -74,7 +74,7 @@ void ProgressView::highlight_draw(Gdiplus::Graphics &g)
 	int real_start, real_end, real_pos; // 实际数据的范围和进度
 	m_model->get_range_pos(real_start, real_end, real_pos);
 
-	int pos = ((real_pos - real_start) / (real_end - real_start))*m_width; // 界面上绘制进度
-	Gdiplus::SolidBrush brush(Gdiplus::Color(200, 255, 255, 255));
-	g.FillRectangle(&brush, m_left, m_top, pos, m_height);
+	int width = ((real_pos - real_start) / (real_end - real_start))*m_width; // 界面上绘制进度的宽度
+	Gdiplus::SolidBrush brush(Gdiplus::Color(255, 255, 255));
+	g.FillRectangle(&brush, m_left, m_top, width, m_height);
 }
