@@ -5,6 +5,8 @@ public:
 	AbstractController();
 	~AbstractController();
 
+	// 设置有效范围
+	virtual void set_pos(int left, int top, int width, int height) = 0;
 	// 击中测试
 	virtual bool hit_test(int x, int y) const = 0;
 	// 光标移出
