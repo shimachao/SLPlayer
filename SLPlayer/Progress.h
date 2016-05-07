@@ -11,6 +11,8 @@ public:
 	Progress(int left, int top, int width, int height, int start = 0, int end = 100);
 	virtual ~Progress();
 
+	// …Ë÷√∑∂Œß
+	void set_pos(int left, int top, int width, int height) override;
 	// ªÊ÷∆
 	void draw(Gdiplus::Graphics &g) override;
 
