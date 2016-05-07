@@ -80,5 +80,5 @@ void Progress::left_button_up()
 // 光标移动消息
 void Progress::mouse_move_over()
 {
-	m_controller->mouse_move_over();
+	
 }
