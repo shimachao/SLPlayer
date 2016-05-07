@@ -33,25 +33,18 @@ void ButtonView::set_pos(int left, int top, int width, int height)
 // 绘制
 void ButtonView::draw(Gdiplus::Graphics &g)
 {
-	if (m_model)
+	auto state = m_model->get_state();
+	switch (state)
 	{
-		auto state = m_model->get_state();
-		switch (state)
-		{
-		case ButtonModel::State::NORMAL:
-			normal_draw(g);
-			break;
-		case ButtonModel::State::HIGHLIGHT:
-			highlight_draw(g);
-			break;
-		case ButtonModel::State::DOWN:
-			down_draw(g);
-			break;
-		}
-	}
-	else
-	{
-		// todo:绘制说明没有对应的模型
+	case ButtonModel::State::NORMAL:
+		normal_draw(g);
+		break;
+	case ButtonModel::State::HIGHLIGHT:
+		highlight_draw(g);
+		break;
+	case ButtonModel::State::DOWN:
+		down_draw(g);
+		break;
 	}
 }
 
@@ -80,19 +73,28 @@ void ButtonView::set_down_img(Gdiplus::Image *img)
 // 正常状态绘制
 void ButtonView::normal_draw(Gdiplus::Graphics &g)
 {
-	// todo
+	if (m_normal_img)
+	{
+		g.DrawImage(m_normal_img, m_left, m_top, m_width, m_height);
+	}
 }
 
 
 // 高亮绘制
 void ButtonView::highlight_draw(Gdiplus::Graphics &g)
 {
-	// todo
+	if (m_highlight_img)
+	{
+		g.DrawImage(m_highlight_img, m_left, m_top, m_width, m_height);
+	}
 }
 
 
 // 按下状态时绘制
 void ButtonView::down_draw(Gdiplus::Graphics &g)
 {
-	// todo
+	if (m_down_img)
+	{
+		g.DrawImage(m_down_img, m_left, m_top, m_width, m_height);
+	}
 }
