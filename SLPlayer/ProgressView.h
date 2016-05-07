@@ -2,8 +2,9 @@
 #include "ProgressModel.h"
 #include <comdef.h>
 #include <Gdiplus.h>
+#include "AbstractView.h"
 
-class ProgressView
+class ProgressView : public AbstractView
 {
 public:
 	ProgressView(int left, int top, int width, int height);
@@ -11,8 +12,10 @@ public:
 
 	// 设置model
 	void set_model(ProgressModel *model);
+	// 设置范围
+	void set_pos(int left, int top, int width, int height) override;
 	// 绘制
-	void draw(Gdiplus::Graphics &g);
+	void draw(Gdiplus::Graphics &g) override;
 
 private:
 	// 正常状态的绘制方法

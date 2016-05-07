@@ -20,6 +20,16 @@ void ProgressView::set_model(ProgressModel *model)
 }
 
 
+// …Ë÷√∑∂Œß
+void ProgressView::set_pos(int left, int top, int width, int height)
+{
+	m_left = left;
+	m_top = top;
+	m_width = width;
+	m_height = height;
+}
+
+
 // ªÊ÷∆
 void ProgressView::draw(Gdiplus::Graphics &g)
 {
