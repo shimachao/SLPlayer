@@ -67,7 +67,12 @@ void LabelController::mouse_move_over()
 // 鼠标左键按下
 void LabelController::left_button_down()
 {
-	//todo
+	// 获取单击时光标位置
+	POINT p;
+	GetCursorPos(&p);
+	HWND hwnd = GetCapture();
+	ScreenToClient(hwnd, &p);
+	// todo
 }
 
 
@@ -81,7 +86,16 @@ void LabelController::left_button_up()
 // 收到WM_CHAR消息
 void LabelController::receive_char(wchar_t c)
 {
-	// todo
+	// 如果是可见字符就添加到model
+	if (iswprint(c))
+	{
+		m_model->add_char(c);
+	}
+	else if (c == VK_RETURN)
+	{
+		// 如果收到回车键就表示编辑完成，转为显示模式
+		m_model->turn_to_display();
+	}
 }
 
 
