@@ -67,12 +67,20 @@ void LabelController::mouse_move_over()
 // 鼠标左键按下
 void LabelController::left_button_down()
 {
-	// 获取单击时光标位置
-	POINT p;
-	GetCursorPos(&p);
-	HWND hwnd = GetCapture();
-	ScreenToClient(hwnd, &p);
-	// todo
+	if (m_model->get_state() == LabelModel::State::EDIT)
+	{
+		// 获取单击时光标位置
+		POINT p;
+		GetCursorPos(&p);
+		HWND hwnd = GetCapture();
+		ScreenToClient(hwnd, &p);
+
+		// 计算光标应该出现的位置
+		int width = m_view->get_char_width(); // 单个字符宽度
+
+		int pos = (p.x - m_left + width / 2) / width; // 四舍五入
+		m_model->set_cursor_pos(pos);
+	}
 }
 
 
