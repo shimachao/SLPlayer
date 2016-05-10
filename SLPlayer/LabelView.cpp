@@ -120,3 +120,10 @@ int LabelView::query_char_width(Gdiplus::Graphics &g)
 	m_char_width = bound.Width / wcsnlen(L"helloÄãºÃ", 7);
 	return m_char_width;
 }
+
+
+// ²éÑ¯×Ö·û¿í¶È
+int LabelView::get_char_width() const
+{
+	return m_char_width;
+}

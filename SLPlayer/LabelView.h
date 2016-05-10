@@ -16,6 +16,8 @@ public:
 	void set_pos(int left, int top, int width, int height) override;
 	// 绘制
 	void draw(Gdiplus::Graphics &g) override;
+	// 查询字符宽度
+	int get_char_width() const;
 
 private:
 	// 显示状态的绘制
