@@ -5,6 +5,8 @@
 LabelView::LabelView(int left, int top, int width, int height)
 	:m_left(left), m_top(top), m_width(width), m_height(height)
 {
+	Gdiplus::FontFamily fontFamily(L"方正兰亭黑_GB18030");
+	m_font = new Gdiplus::Font(&fontFamily, 16, Gdiplus::FontStyleRegular, Gdiplus::UnitPixel);
 }
 
 
@@ -72,20 +74,18 @@ void LabelView::edit_draw(Gdiplus::Graphics &g)
 	g.DrawRectangle(&pen, m_left, m_top, m_width, m_height);
 
 	// 绘制文字
-	Gdiplus::FontFamily fontFamily(L"微软雅黑");
-	Gdiplus::Font font(&fontFamily, 14, Gdiplus::FontStyleRegular, Gdiplus::UnitPixel);
 	Gdiplus::SolidBrush textBrush(Gdiplus::Color::Black);
 	Gdiplus::StringFormat stringFormat;
 	stringFormat.SetAlignment(Gdiplus::StringAlignmentNear); // 水平方向左对齐
 	stringFormat.SetLineAlignment(Gdiplus::StringAlignmentCenter); // 垂直方向居中对齐
 	Gdiplus::RectF rectF(m_left, m_top, m_width, m_height);
-	g.DrawString(m_model->get_text().c_str(), -1, &font, rectF, &stringFormat, &textBrush);
+	g.DrawString(m_model->get_text().c_str(), -1, m_font, rectF, &stringFormat, &textBrush);
 
 	// 绘制光标
 	size_t cursor_pos = m_model->get_cursor_pos();
 	// 计算光标的位置
 	Gdiplus::RectF rf;
-	g.MeasureString(m_model->get_text().c_str(), cursor_pos, &font, rectF, &stringFormat, &rf);
+	g.MeasureString(m_model->get_text().c_str(), cursor_pos, m_font, rectF, &stringFormat, &rf);
 	g.DrawLine(&pen, rf.GetRight(), rf.Y, rf.GetRight(), rf.Y + rf.GetBottom());
 
 	// 绘制文字选中效果
@@ -95,9 +95,9 @@ void LabelView::edit_draw(Gdiplus::Graphics &g)
 	if (start < end)
 	{
 		// 计算被选中文本的x方向坐标范围
-		g.MeasureString(m_model->get_text().c_str(), start, &font, rectF, &stringFormat, &rectF);
+		g.MeasureString(m_model->get_text().c_str(), start, m_font, rectF, &stringFormat, &rectF);
 		auto startx = rectF.X + rectF.Width; // 起始位置
-		g.MeasureString(m_model->get_text().c_str(), end + 1, &font, rectF, &stringFormat, &rectF);
+		g.MeasureString(m_model->get_text().c_str(), end + 1, m_font, rectF, &stringFormat, &rectF);
 		auto starty = rectF.X + rectF.Width; // 结束位置
 		// 绘制效果
 		Gdiplus::SolidBrush bgBrush(Gdiplus::Color(120, 0, 0, 255));
