@@ -60,7 +60,28 @@ void LabelController::mouse_move_in()
 // 光标移动消息
 void LabelController::mouse_move_over()
 {
-	//todo
+	if (m_select)
+	{
+		auto char_width = m_view->get_char_width();
+		auto prev_pos = m_model->get_cursor_pos();
+		// 获取鼠标当前位置
+		POINT p;
+		GetCursorPos(&p);
+		HWND hwnd = GetCapture();
+		ScreenToClient(hwnd, &p);
+		if (p.x > m_left + prev_pos * char_width)
+		{
+			// 如果是向右选择
+			auto end_pos = (p.x - m_left) / char_width;
+			m_model->set_selected_range(prev_pos, end_pos);
+		}
+		else
+		{
+			// 如果是向左选择
+			auto end_pos = (p.x - m_left + char_width - 1) / char_width;
+			m_model->set_selected_range(end_pos, prev_pos);
+		}
+	}
 }
 
 
