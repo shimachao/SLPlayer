@@ -76,8 +76,18 @@ std::wstring::size_type LabelModel::get_cursor_pos() const
 // 设置被选中字符的范围
 void LabelModel::set_selected_range(std::wstring::size_type start, std::wstring::size_type end)
 {
-	if (start >= 0 && end <= m_text.size() && start < end)
+	if (start < end)
 	{
+		if (start < 0)
+		{
+			start = 0;
+		}
+
+		if (end > m_text.size())
+		{
+			end = m_text.size();
+		}
+
 		m_selected_star_pos = start;
 		m_selected_end_pos = end;
 	}
