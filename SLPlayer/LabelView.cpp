@@ -36,6 +36,9 @@ void LabelView::set_pos(int left, int top, int width, int height)
 // 绘制
 void LabelView::draw(Gdiplus::Graphics &g)
 {
+	// 如果是第一次进入该函数，就利用g计算单个字符宽度
+	static auto w = query_char_width(g);
+
 	auto state = m_model->get_state();
 	if (state == LabelModel::State::DISPLAY)
 	{
@@ -104,3 +107,16 @@ void LabelView::edit_draw(Gdiplus::Graphics &g)
 	}
 }
 
+
+// 查询并设置单个字符宽度
+int LabelView::query_char_width(Gdiplus::Graphics &g)
+{
+	Gdiplus::RectF layout(m_left, m_top, m_width, m_height);
+	Gdiplus::RectF bound;
+	int linesFilled = 0;
+	int codePointsFitted = 0;
+	g.MeasureString(L"hello你好", -1, m_font, layout, 0,&bound);
+	
+	m_char_width = bound.Width / wcsnlen(L"hello你好", 7);
+	return m_char_width;
+}
