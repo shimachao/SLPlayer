@@ -56,14 +56,12 @@ void LabelView::display_draw(Gdiplus::Graphics &g)
 	g.FillRectangle(&bgBrush, m_left, m_top, m_width, m_height);
 
 	// »æÖÆÎÄ×Ö
-	Gdiplus::FontFamily fontFamily(L"Î¢ÈíÑÅºÚ");
-	Gdiplus::Font font(&fontFamily, 14, Gdiplus::FontStyleRegular, Gdiplus::UnitPixel);
 	Gdiplus::SolidBrush textBrush(Gdiplus::Color::Black);
 	Gdiplus::StringFormat stringFormat;
 	stringFormat.SetAlignment(Gdiplus::StringAlignmentCenter);
 	stringFormat.SetLineAlignment(Gdiplus::StringAlignmentCenter);
 	Gdiplus::RectF rectF(m_left, m_top, m_width, m_height);
-	g.DrawString(m_model->get_text().c_str(), -1, &font, rectF, &stringFormat, &textBrush);
+	g.DrawString(m_model->get_text().c_str(), -1, m_font, rectF, &stringFormat, &textBrush);
 }
 
 // ±à¼­×´Ì¬µÄ»æÖÆ

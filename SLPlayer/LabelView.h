@@ -28,8 +28,7 @@ private:
 	int m_top;
 	int m_width;
 	int m_height;
-	Gdiplus::Font* m_font = nullptr; // 绘制用的字体
-
+	Gdiplus::Font* m_font = nullptr;
 	LabelModel *m_model = nullptr; // 模型引用
 };
 
