@@ -130,6 +130,14 @@ void LabelController::receive_char(wchar_t c)
 }
 
 
+// Ê§È¥½¹µã
+void LabelController::lost_focus()
+{
+	m_model->turn_to_display();
+	m_select = false;
+}
+
+
 // Êó±ê×ó¼üË«»÷
 void LabelController::left_button_double_click()
 {

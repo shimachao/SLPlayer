@@ -29,6 +29,8 @@ public:
 	void left_button_double_click();
 	// 收到WM_CHAR消息
 	void receive_char(wchar_t c);
+	// 失去焦点
+	void lost_focus();
 
 private:
 	int m_left;
