@@ -35,6 +35,7 @@ private:
 	int m_top;
 	int m_width;
 	int m_height;
+	bool m_select = false; // 是否正在选中文本
 
 	LabelModel *m_model = nullptr; // model引用
 	LabelView *m_view = nullptr; // view引用

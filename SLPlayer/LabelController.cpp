@@ -80,6 +80,7 @@ void LabelController::left_button_down()
 
 		int pos = (p.x - m_left + width / 2) / width; // 四舍五入
 		m_model->set_cursor_pos(pos);
+		m_select = true;
 	}
 }
 
@@ -103,6 +104,7 @@ void LabelController::receive_char(wchar_t c)
 	{
 		// 如果收到回车键就表示编辑完成，转为显示模式
 		m_model->turn_to_display();
+		m_select = false;
 	}
 }
 
@@ -113,5 +115,6 @@ void LabelController::left_button_double_click()
 	if (m_model && m_model->get_state() == LabelModel::State::DISPLAY)
 	{
 		m_model->turn_to_edit();
+		left_button_down();
 	}
 }
